@@ -1,6 +1,6 @@
 from __future__ import print_function
 import numpy as np
-from .GoLogic import GoBoard
+from .GoLogic import GoBoard, PASS
 from Game import Game
 import sys
 sys.path.append('..')
