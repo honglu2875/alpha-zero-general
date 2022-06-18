@@ -1,4 +1,3 @@
-from config import BOARD_SIZE, KOMI, INPUT_CHANNELS, PAST_MOVES
 import numpy as np
 import copy
 
@@ -6,6 +5,23 @@ BLACK = 0
 WHITE = 1
 EMPTY = 2
 INVLD = 3
+
+BOARD_SIZE = 19  # The default and max board size. We can reset the value later.
+
+KOMI = 7.5  # The default komi. We can reset the value later.
+
+USE_GPU = True  # Set true will use the GPU automatically if you have one.
+
+BLOCK_SIZE = 2  # The network residual block size.
+
+FILTER_SIZE = 64  # The network residual filter size.
+
+INPUT_CHANNELS = 18  # Number of the network input layers.
+
+PAST_MOVES = 8  # Number of past moves encoding to the planes.
+
+USE_SE = False  # Enable Squeeze-and-Excite net struct.
+
 
 NUM_VERTICES = (BOARD_SIZE+2) ** 2  # max vertices number
 NUM_INTESECTIONS = BOARD_SIZE ** 2  # max intersections number
