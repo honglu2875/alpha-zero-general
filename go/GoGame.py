@@ -30,8 +30,9 @@ class GoGame(Game):
         # if action == self.n*self.n:
         #    return (board, -player)
         b = board.copy()
-        assert b.legal(action)
-        b.play(action)
+        move = PASS if action == 0 else b.index_to_vertex(action-1)
+        assert b.legal(move)
+        b.play(move)
         return (b, -player)
 
     def getValidMoves(self, board, player):
