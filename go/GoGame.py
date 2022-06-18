@@ -59,7 +59,7 @@ class GoGame(Game):
 
     def getCanonicalForm(self, board, player):
         # return state if player==1, else return -state if player==-1
-        return board.get_features()
+        return board
 
     def getSymmetries(self, board, pi):
         # mirror, rotational
