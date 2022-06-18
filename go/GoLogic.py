@@ -201,7 +201,7 @@ class GoBoard(object):
         # Deep copy the board to another board. But they will share the same
         # history board positions.
 
-        b_cpy = Board(self.board_size, self.komi)
+        b_cpy = GoBoard(self.board_size, self.komi)
         b_cpy.state = np.copy(self.state)
         b_cpy.id = np.copy(self.id)
         b_cpy.next = np.copy(self.next)
