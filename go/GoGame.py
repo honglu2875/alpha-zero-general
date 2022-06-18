@@ -79,7 +79,7 @@ class GoGame(Game):
                 l += [(newB, list(newPi.ravel()) + [pi[-1]])]
         return l
         """
-        return [board]
+        return []
 
     def stringRepresentation(self, board):
         return board.get_features().tobytes()
