@@ -47,15 +47,15 @@ class GoGame(Game):
     def getGameEnded(self, board, player):
         # return 0 if not ended, 1 if player 1 won, -1 if player 1 lost
         # player = 1
-        b = Board(self.n)
-        b.pieces = np.copy(board)
-        if b.has_legal_moves(player):
+        if board.num_passes >= 2:
+            if board.final_score() > 0:
+                return 1
+            elif board.final_score() < 0:
+                return -1
+            else:
+                return 1e-8
+        else:
             return 0
-        if b.has_legal_moves(-player):
-            return 0
-        if b.countDiff(player) > 0:
-            return 1
-        return -1
 
     def getCanonicalForm(self, board, player):
         # return state if player==1, else return -state if player==-1
